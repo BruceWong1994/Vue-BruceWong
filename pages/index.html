@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+        <meta charset="utf-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{message}}
+        </div>
+
+        <script>
+            var vm = new Vue({
+                el:'#app',
+                data:{
+                    message: 'This is Index.html'
+                }
+            })
+
+            console.log(vm.$data.message);
+
+            vm.$watch('message',(newval,oldval)=>{
+                console.log('message已改变为：'+newval);
+            })
+            vm.$data.message = '666'
+        </script>
+    </body>
+</html>
